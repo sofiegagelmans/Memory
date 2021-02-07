@@ -3,12 +3,12 @@ export default class Card {
     this._holder = holder;
     this._icon = icon;
     this._flippedEvent = new CustomEvent("flipped", { detail: this });
-    this._cardRef = this.generateHTML();
-    // this._isFlipped = false;
-    // this.setUpEvents();
+    this._ref = this.init();
+    this._isFlipped = false;
+    this.setUpEvents();
   }
 
-  generateHTML() {
+  init() {
     this._holder.insertAdjacentHTML(
       "beforeend",
       `
@@ -33,11 +33,11 @@ export default class Card {
 
   flip = () => {
     if (this._isFlipped) {
-      this._cardRef.classList.remove("flipped");
+      this._ref.classList.remove("flipped");
       this._isFlipped = false;
     } else {
       //kaart omdraaien
-      this._cardRef.classList.add("flipped");
+      this._ref.classList.add("flipped");
       this._isFlipped = true;
       dispatchEvent(this._flippedEvent);
     }

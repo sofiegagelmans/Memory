@@ -8,7 +8,6 @@ class Memory {
     this._second = null;
     this._selected = [];
     this._turned = [];
-    this._htmlRef = null;
     this.fetchIcons();
   }
 
@@ -30,7 +29,7 @@ class Memory {
         <div id="grid"></div> 
       `
     );
-    this._htmlRef = document.getElementById("grid");
+    this._htmlRef = document.querySelector("#grid");
     this.setUpEvents();
     this.startLevel();
   }
@@ -67,16 +66,15 @@ class Memory {
     let card4 = new Card(this._htmlRef, "home");
     // }
     // }
-    // new Card(".grid", "pencil||home||gear||tree||leaf");
 
+    // new Card(".grid", "pencil||home||gear||tree||leaf");
     // const result = getUniqueItemsfromArray(this._lvl * 2)
     // const allCards = [...result, ...result];
     // allCards.shuffle() //how to suffle an array js
     // allCards.forEach((icon) => {
-
     //   new Card(this._htmlRef, icon);
-
     // })
+
     //1 => 2 unieke => 4
     //2 => 4 unieke => 8
     //3 => 8 unieke => 16
