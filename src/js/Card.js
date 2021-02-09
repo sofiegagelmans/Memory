@@ -13,7 +13,7 @@ export default class Card {
       "beforeend",
       `
       <div class="card">
-        <div class="card-inner">
+        <div class="card-flip">
           <div class="front"></div>
           <div class="back">
             <svg class="icon icon-${this._icon}">
